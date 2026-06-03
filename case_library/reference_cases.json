@@ -1,0 +1,42 @@
+{
+  "dataset_name": "reference_cases_v1",
+  "notes": "资料口 1 第一批只作为参考命例；gold_cases 后续补。",
+  "cases": [
+    {
+      "case_id": "case_cn_001_bruce_lee",
+      "usable_level": "高质量事件校验",
+      "auto_regression": false,
+      "weight": 0.75,
+      "calendar_support": "needs_international_timezone_support",
+      "birth": {"year": 1940, "month": 11, "day": 27, "hour": 7, "minute": 12, "gender": "男", "location": "San Francisco, California, USA", "longitude": -122.4167, "timezone": "PST UTC-08", "calendar": "solar"},
+      "known_events": [
+        {
+          "year": 1964,
+          "domain": "婚恋",
+          "event": "与 Linda Lee Cadwell 结婚。",
+          "certainty": "高",
+          "source": "Britannica Bruce Lee facts",
+          "source_url": "https://www.britannica.com/facts/Bruce-Lee"
+        },
+        {
+          "year": 1973,
+          "domain": "名声地位",
+          "event": "Enter the Dragon 上映并扩大国际影响。",
+          "certainty": "高",
+          "source": "Britannica Enter the Dragon",
+          "source_url": "https://www.britannica.com/topic/Enter-the-Dragon"
+        },
+        {
+          "year": 1973,
+          "month": 7,
+          "day": 20,
+          "domain": "健康",
+          "event": "李小龙于香港逝世。",
+          "certainty": "高",
+          "source": "Britannica Bruce Lee biography",
+          "source_url": "https://www.britannica.com/biography/Bruce-Lee"
+        }
+      ]
+    }
+  ]
+}

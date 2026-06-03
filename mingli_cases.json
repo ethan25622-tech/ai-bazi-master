@@ -1,0 +1,741 @@
+{
+  "schema_version": "mingli-case-library.v1",
+  "case_policy": {
+    "purpose": "Store structured life cases for training and regression checks of interpretation quality.",
+    "privacy_rule": "Use anonymized or consented cases only. Do not store names, phone numbers, ID numbers, exact addresses, or raw private chat logs.",
+    "quality_rule": "Each formal case must include birth data, source status, themes, observed events, judgement notes, and review status.",
+    "supported_birth_range": "1902-03-01 onward for zydx-compatible pillar validation",
+    "validation_priority_rules": {
+      "P0": "Core precise validation. Birth year/month/day/hour/minute is explicit, location and timezone are clear, and the birth-time source is AA or birth-record grade.",
+      "P1": "Usable precise validation with caution. Birth time is relatively credible, source level is A/B, or there is a documented but manageable dispute.",
+      "P2": "Auxiliary reference only. Birth time comes from C-grade, traditional, rectified, biography-derived, or otherwise weak material. Do not use as a high-weight automated benchmark.",
+      "P3": "Event sample only. Birth date is known but hour/minute is missing or unreliable. Do not validate hour pillar or exact chart.",
+      "exclude": "Do not admit into the library when birth date, key event, or source cannot be traced."
+    },
+    "machine_use_policy": {
+      "P0": "May enter automatic regression tests by default.",
+      "P1": "May enter manual-review or low-weight regression sets.",
+      "P2": "Use for interpretation-quality reference only; exclude from precise pillar validation.",
+      "P3": "Use only for event-domain labels and narrative examples; exclude from precise chart validation."
+    }
+  },
+  "cases": [
+    {
+      "id": "ML-0001",
+      "title": "1990-01-01 baseline seed case",
+      "privacy": "synthetic_fixture",
+      "validation_priority": "P0",
+      "birth_time_reliability": {
+        "level": "fixture",
+        "source": "rule_cases.json#1",
+        "usable_for_precise_validation": true,
+        "dispute": "",
+        "note": "Synthetic fixture with complete birth time. It is suitable for pipeline validation, not for real-world statistical claims."
+      },
+      "source": {
+        "type": "fixture",
+        "reference": "rule_cases.json#1",
+        "consent": "not_applicable",
+        "reliability": 0.7
+      },
+      "birth": {
+        "calendar": "solar",
+        "year": 1990,
+        "month": 1,
+        "day": 1,
+        "hour": 0,
+        "minute": 0,
+        "longitude": 120,
+        "gender": "男"
+      },
+      "expected_chart": {
+        "schema_version": "ai-bazi-master.v1",
+        "pillars": {
+          "年柱": "己巳",
+          "月柱": "丙子",
+          "日柱": "丙寅",
+          "时柱": "戊子"
+        },
+        "day_master": "丙",
+        "month_command": "十一月"
+      },
+      "themes": [
+        "overview",
+        "pattern",
+        "strength",
+        "career",
+        "wealth",
+        "marriage",
+        "health",
+        "luck_cycle"
+      ],
+      "life_events": [
+        {
+          "period": "seed",
+          "theme": "overview",
+          "domain": "名声地位",
+          "event": "Pipeline seed case used to verify case-library structure before adding real anonymized cases.",
+          "outcome": "not_a_real_life_event",
+          "confidence": 0.2
+        }
+      ],
+      "questions": [
+        {
+          "theme": "career",
+          "question": "事业怎么看？",
+          "expected_answer_focus": [
+            "state the pattern and strength conclusion",
+            "show evidence keys",
+            "avoid deterministic promises"
+          ]
+        },
+        {
+          "theme": "luck_cycle",
+          "question": "近年运势怎么看？",
+          "expected_answer_focus": [
+            "ask for a concrete year",
+            "explain that dayun is available but annual interaction is still pending"
+          ]
+        }
+      ],
+      "judgement_notes": [
+        {
+          "theme": "pattern",
+          "expected_summary": "正官格：败",
+          "evidence_keys": [
+            "pattern.primary"
+          ],
+          "quality_target": "The answer should distinguish rule conclusion, evidence, confidence, and uncertainty."
+        },
+        {
+          "theme": "strength",
+          "expected_summary": "中和偏弱",
+          "evidence_keys": [
+            "strength.three_axis"
+          ],
+          "quality_target": "The answer should not judge strength in isolation from pattern and luck cycle."
+        }
+      ],
+      "review": {
+        "status": "seed",
+        "last_verified": "2026-05-08",
+        "reviewer": "system",
+        "notes": "Replace or supplement with anonymized real cases as soon as source material is available."
+      }
+    }
+  ],
+  "public_case_candidates": [
+    {
+      "case_id": "case_cn_001_bruce_lee",
+      "name": "Bruce Lee / 李小龙",
+      "validation_priority": "P0",
+      "birth_time_reliability": {
+        "level": "AA",
+        "source": "Astro-Databank, Rodden Rating AA",
+        "usable_for_precise_validation": true,
+        "dispute": "",
+        "note": "Public source records 1940-11-27 07:12 in San Francisco. This is the strongest Chinese/Hong Kong-related public candidate in the current batch."
+      },
+      "birth": {
+        "year": 1940,
+        "month": 11,
+        "day": 27,
+        "hour": 7,
+        "minute": 12,
+        "gender": "男",
+        "location": "San Francisco, California, USA",
+        "longitude": -122.4167,
+        "timezone": "PST UTC-08"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1973,
+          "month": 7,
+          "domain": "健康",
+          "event": "李小龙于香港逝世。",
+          "certainty": "高",
+          "source": "Britannica; Astro-Databank Rodden AA"
+        }
+      ],
+      "machine_check": {
+        "suitable": true,
+        "level": "高",
+        "reason": "出生时间、地点、时区明确，来源等级 AA。"
+      },
+      "notes": "适合晋升为正式 P0 精确校验案例。"
+    },
+    {
+      "case_id": "case_cn_002_deng_xiaoping",
+      "name": "Deng Xiaoping / 邓小平",
+      "validation_priority": "P1",
+      "birth_time_reliability": {
+        "level": "B",
+        "source": "Astro-Databank, Rodden Rating B",
+        "usable_for_precise_validation": true,
+        "dispute": "",
+        "note": "Birth time is biography-derived rather than birth-record grade."
+      },
+      "birth": {
+        "year": 1904,
+        "month": 8,
+        "day": 22,
+        "hour": 20,
+        "minute": 30,
+        "gender": "男",
+        "location": "Guang'an, Sichuan, China",
+        "longitude": 106.6369,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1992,
+          "month": 1,
+          "domain": "事业",
+          "event": "南方谈话/南巡，推动改革开放继续推进。",
+          "certainty": "高",
+          "source": "China.org.cn; Astro-Databank Rodden B"
+        },
+        {
+          "year": 1997,
+          "month": 2,
+          "domain": "健康",
+          "event": "逝世于北京。",
+          "certainty": "高",
+          "source": "Britannica"
+        }
+      ],
+      "machine_check": {
+        "suitable": true,
+        "level": "中",
+        "reason": "时辰完整但非出生证明级，适合低权重或人工复核。"
+      },
+      "notes": "可作为 P1 候选，不建议进入默认高权重回归。"
+    },
+    {
+      "case_id": "case_cn_003_chiang_kaishek",
+      "name": "Chiang Kai-shek / 蒋介石",
+      "validation_priority": "P1",
+      "birth_time_reliability": {
+        "level": "B",
+        "source": "Astro-Databank, Rodden Rating B",
+        "usable_for_precise_validation": true,
+        "dispute": "Commonly listed as 12:00, with another approximately 14:00 claim.",
+        "note": "Use only with dispute note; consider separate alternative chart if needed."
+      },
+      "birth": {
+        "year": 1887,
+        "month": 10,
+        "day": 31,
+        "hour": 12,
+        "minute": 0,
+        "gender": "男",
+        "location": "Xikou, Zhejiang, China",
+        "longitude": 120.4728,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1927,
+          "month": 12,
+          "domain": "婚恋",
+          "event": "与宋美龄结婚。",
+          "certainty": "高",
+          "source": "Astro-Databank; Britannica context"
+        },
+        {
+          "year": 1936,
+          "month": 12,
+          "domain": "灾祸风险",
+          "event": "西安事变中被扣押，后获释。",
+          "certainty": "高",
+          "source": "Britannica Xi'an Incident"
+        }
+      ],
+      "machine_check": {
+        "suitable": true,
+        "level": "中",
+        "reason": "时辰完整但有争议。"
+      },
+      "notes": "P1 候选，必须保留时辰争议。"
+    },
+    {
+      "case_id": "case_cn_004_jackie_chan",
+      "name": "Jackie Chan / 成龙",
+      "validation_priority": "P2",
+      "birth_time_reliability": {
+        "level": "C",
+        "source": "Astro-Databank, Rodden Rating C",
+        "usable_for_precise_validation": false,
+        "dispute": "Source accuracy is in question.",
+        "note": "Do not use for high-weight pillar validation."
+      },
+      "birth": {
+        "year": 1954,
+        "month": 4,
+        "day": 7,
+        "hour": 9,
+        "minute": 45,
+        "gender": "男",
+        "location": "Hong Kong, China",
+        "longitude": 114.15,
+        "timezone": "AWDT h9e per Astro-Databank"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1998,
+          "month": null,
+          "domain": "事业",
+          "event": "《Rush Hour》成为其美国市场突破点。",
+          "certainty": "中",
+          "source": "Britannica; Astro-Databank Rodden C"
+        },
+        {
+          "year": 2016,
+          "month": 11,
+          "domain": "名声地位",
+          "event": "获奥斯卡终身成就荣誉奖。",
+          "certainty": "高",
+          "source": "Public Academy/JackieChan.com reports"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "辅助参考",
+        "reason": "Rodden C，时辰不可作强校验。"
+      },
+      "notes": "适合解释质量参考，不适合自动精确校验。"
+    },
+    {
+      "case_id": "case_cn_005_mao_zedong",
+      "name": "Mao Zedong / 毛泽东",
+      "validation_priority": "P2",
+      "birth_time_reliability": {
+        "level": "C",
+        "source": "Astro-Databank, Rodden Rating C",
+        "usable_for_precise_validation": false,
+        "dispute": "Birth time appears approximate, traditional, or rectified.",
+        "note": "Do not use as a strong benchmark."
+      },
+      "birth": {
+        "year": 1893,
+        "month": 12,
+        "day": 26,
+        "hour": 7,
+        "minute": 30,
+        "gender": "男",
+        "location": "Shaoshanchong, Hunan, China",
+        "longitude": 112.475,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1949,
+          "month": 10,
+          "domain": "名声地位",
+          "event": "宣告中华人民共和国成立。",
+          "certainty": "高",
+          "source": "Britannica; Astro-Databank Rodden C"
+        },
+        {
+          "year": 1976,
+          "month": 9,
+          "domain": "健康",
+          "event": "逝世于北京。",
+          "certainty": "高",
+          "source": "Britannica"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "辅助参考",
+        "reason": "出生时辰来源弱，不作强校验。"
+      },
+      "notes": "适合名声地位事件样本，不适合时柱校验。"
+    },
+    {
+      "case_id": "case_cn_006_sun_yatsen",
+      "name": "Sun Yat-sen / 孙中山",
+      "validation_priority": "P2",
+      "birth_time_reliability": {
+        "level": "C",
+        "source": "Astro-Databank, Rodden Rating C",
+        "usable_for_precise_validation": false,
+        "dispute": "Birth time is traditional/family-source style and not birth-record grade.",
+        "note": "Use as auxiliary historical example only."
+      },
+      "birth": {
+        "year": 1866,
+        "month": 11,
+        "day": 12,
+        "hour": 4,
+        "minute": 0,
+        "gender": "男",
+        "location": "Huangmaoping/Xiangshan, Guangdong, China",
+        "longitude": 113.3917,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1911,
+          "month": 10,
+          "domain": "名声地位",
+          "event": "辛亥革命爆发，清朝统治被推翻进程开启。",
+          "certainty": "高",
+          "source": "Britannica; Astro-Databank Rodden C"
+        },
+        {
+          "year": 1925,
+          "month": 3,
+          "domain": "健康",
+          "event": "病逝于北京。",
+          "certainty": "高",
+          "source": "Britannica"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "辅助参考",
+        "reason": "出生时辰来源弱。"
+      },
+      "notes": "不适合精确自动校验。"
+    },
+    {
+      "case_id": "case_cn_007_soong_meiling",
+      "name": "Soong Meiling / 宋美龄",
+      "validation_priority": "P2",
+      "birth_time_reliability": {
+        "level": "C",
+        "source": "Astro-Databank, Rodden Rating C",
+        "usable_for_precise_validation": false,
+        "dispute": "Original source is not strong enough for precise validation.",
+        "note": "Use as auxiliary sample only."
+      },
+      "birth": {
+        "year": 1898,
+        "month": 6,
+        "day": 4,
+        "hour": 13,
+        "minute": 0,
+        "gender": "女",
+        "location": "Shanghai, China",
+        "longitude": 121.4667,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1927,
+          "month": 12,
+          "domain": "婚恋",
+          "event": "与蒋介石结婚。",
+          "certainty": "高",
+          "source": "Astro-Databank"
+        },
+        {
+          "year": 2003,
+          "month": 10,
+          "domain": "健康",
+          "event": "在纽约逝世。",
+          "certainty": "高",
+          "source": "Astro-Databank"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "辅助参考",
+        "reason": "Rodden C，不作强校验。"
+      },
+      "notes": "适合婚恋/名声地位/健康事件参考。"
+    },
+    {
+      "case_id": "case_cn_008_zhou_enlai",
+      "name": "Zhou Enlai / 周恩来",
+      "validation_priority": "P2",
+      "birth_time_reliability": {
+        "level": "C",
+        "source": "Astro-Databank, Rodden Rating C",
+        "usable_for_precise_validation": false,
+        "dispute": "Source accuracy is in question.",
+        "note": "Use as auxiliary sample only."
+      },
+      "birth": {
+        "year": 1898,
+        "month": 3,
+        "day": 5,
+        "hour": 19,
+        "minute": 43,
+        "gender": "男",
+        "location": "Huai'an, Jiangsu, China",
+        "longitude": 119.1442,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1949,
+          "month": 10,
+          "domain": "事业",
+          "event": "出任中华人民共和国总理。",
+          "certainty": "高",
+          "source": "Britannica; Astro-Databank Rodden C"
+        },
+        {
+          "year": 1976,
+          "month": 1,
+          "domain": "健康",
+          "event": "逝世于北京。",
+          "certainty": "高",
+          "source": "Britannica"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "辅助参考",
+        "reason": "Rodden C，不作强校验。"
+      },
+      "notes": "适合事业/名声地位事件参考。"
+    },
+    {
+      "case_id": "case_cn_009_wang_jingwei",
+      "name": "Wang Jingwei / 汪精卫",
+      "validation_priority": "P2",
+      "birth_time_reliability": {
+        "level": "C",
+        "source": "Astro-Databank, Rodden Rating C",
+        "usable_for_precise_validation": false,
+        "dispute": "Source accuracy is in question.",
+        "note": "Use as auxiliary sample only."
+      },
+      "birth": {
+        "year": 1883,
+        "month": 5,
+        "day": 4,
+        "hour": 10,
+        "minute": 0,
+        "gender": "男",
+        "location": "Guangzhou, Guangdong, China",
+        "longitude": 113.2667,
+        "timezone": "LMT"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 1940,
+          "month": 3,
+          "domain": "名声地位",
+          "event": "任日本占领区南京政权首脑。",
+          "certainty": "高",
+          "source": "Astro-Databank"
+        },
+        {
+          "year": 1944,
+          "month": 11,
+          "domain": "健康",
+          "event": "逝世。",
+          "certainty": "高",
+          "source": "Astro-Databank"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "辅助参考",
+        "reason": "Rodden C，不作强校验。"
+      },
+      "notes": "适合灾祸风险/名声地位事件参考。"
+    },
+    {
+      "case_id": "case_cn_010_yao_ming",
+      "name": "Yao Ming / 姚明",
+      "validation_priority": "P3",
+      "birth_time_reliability": {
+        "level": "XX",
+        "source": "Public biography date only",
+        "usable_for_precise_validation": false,
+        "dispute": "Birth hour is not available in the collected source.",
+        "note": "Use only as event-domain sample."
+      },
+      "birth": {
+        "year": 1980,
+        "month": 9,
+        "day": 12,
+        "hour": null,
+        "minute": null,
+        "gender": "男",
+        "location": "Shanghai, China",
+        "longitude": null,
+        "timezone": "Asia/Shanghai"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 2011,
+          "month": 7,
+          "domain": "健康",
+          "event": "因腿、脚、踝伤病退役。",
+          "certainty": "高",
+          "source": "Britannica"
+        },
+        {
+          "year": 2016,
+          "month": null,
+          "domain": "名声地位",
+          "event": "入选篮球名人堂。",
+          "certainty": "高",
+          "source": "Britannica"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "不可用于精确校验",
+        "reason": "缺出生时辰。"
+      },
+      "notes": "只适合事件分类和年份层面的粗样本。"
+    },
+    {
+      "case_id": "case_cn_011_fan_bingbing",
+      "name": "Fan Bingbing / 范冰冰",
+      "validation_priority": "P3",
+      "birth_time_reliability": {
+        "level": "XX",
+        "source": "Public biography date only",
+        "usable_for_precise_validation": false,
+        "dispute": "Birth hour is not available in the collected source.",
+        "note": "Use only as event-domain sample."
+      },
+      "birth": {
+        "year": 1981,
+        "month": 9,
+        "day": 16,
+        "hour": null,
+        "minute": null,
+        "gender": "女",
+        "location": "Qingdao, Shandong, China",
+        "longitude": null,
+        "timezone": "Asia/Shanghai"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 2018,
+          "month": 10,
+          "domain": "财运",
+          "event": "涉税事件，被追缴税款及罚款。",
+          "certainty": "高",
+          "source": "TIME"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "不可用于精确校验",
+        "reason": "缺出生时辰。"
+      },
+      "notes": "适合作财运/灾祸风险/名声地位事件标签样本。"
+    },
+    {
+      "case_id": "case_cn_012_zhang_ziyi",
+      "name": "Zhang Ziyi / 章子怡",
+      "validation_priority": "P3",
+      "birth_time_reliability": {
+        "level": "XX",
+        "source": "Public biography date only",
+        "usable_for_precise_validation": false,
+        "dispute": "Birth hour is not available in the collected source.",
+        "note": "Use only as event-domain sample."
+      },
+      "birth": {
+        "year": 1979,
+        "month": 2,
+        "day": 9,
+        "hour": null,
+        "minute": null,
+        "gender": "女",
+        "location": "Beijing, China",
+        "longitude": null,
+        "timezone": "Asia/Shanghai"
+      },
+      "chart_if_known": {
+        "year_pillar": "",
+        "month_pillar": "",
+        "day_pillar": "",
+        "hour_pillar": ""
+      },
+      "known_events": [
+        {
+          "year": 2000,
+          "month": null,
+          "domain": "事业",
+          "event": "凭《卧虎藏龙》获得国际知名度。",
+          "certainty": "中高",
+          "source": "Britannica"
+        }
+      ],
+      "machine_check": {
+        "suitable": false,
+        "level": "不可用于精确校验",
+        "reason": "缺出生时辰。"
+      },
+      "notes": "适合作事业/名声地位事件标签样本。"
+    }
+  ]
+}

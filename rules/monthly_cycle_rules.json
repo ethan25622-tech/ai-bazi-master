@@ -1,0 +1,154 @@
+{
+  "rule_set": {
+    "name": "monthly_cycle_rules_v1",
+    "version": "0.1",
+    "source_port": "资料口 C",
+    "calendar_boundary": {
+      "month_basis": "solar_terms",
+      "description": "流月以节气为界，不以农历初一为界。每个流月从对应节气起算，到下一个节气前结束。"
+    },
+    "principles": [
+      "流月只作为月份窗口，不单独断大事。",
+      "trigger_score 只表示关注度，不代表吉凶。",
+      "不可忽略大运、流年、原局已经形成的主线。"
+    ]
+  },
+  "rules": [
+    {
+      "rule_id": "liuyue_branch_chong_year_activated_key_branch_v1",
+      "status": "active_rule",
+      "domain": "monthly_cycle",
+      "level": "month_window",
+      "subjectivity": "medium",
+      "trigger_score": 72,
+      "trigger": {
+        "type": "branch_chong",
+        "condition": "流月地支冲流年已经引动的原局关键支"
+      },
+      "dependency": ["annual_activated_original_branch_exists", "monthly_branch_forms_chong_with_that_branch"],
+      "affected_palace": ["被冲之原局支所在宫位"],
+      "possible_domains": ["relationship", "career", "family", "housing", "health_awareness", "contract_or_collaboration"],
+      "interpretation": "该流月可能成为流年已引动主题的显化窗口。冲表示变化、碰撞、调整、外部推动或心理压力上升，但不直接代表凶事。",
+      "output_policy": {
+        "allowed": ["观察窗口", "推进窗口", "压力显化窗口"],
+        "forbidden": ["单独断定分手、离婚、离职、事故、疾病", "把冲直接说成坏事", "脱离岁运主线单独解释流月"]
+      },
+      "evidence": ["流年已引动原局关键支", "流月支与该支形成六冲"],
+      "uncertainty": "medium_high；流月只提供时间窗口，事件性质需由原局格局、大运流年主线及现实背景共同判断。"
+    },
+    {
+      "rule_id": "liuyue_complete_sanhe_sanhui_from_original_dayun_liunian_v1",
+      "status": "active_rule",
+      "domain": "monthly_cycle",
+      "level": "month_window",
+      "subjectivity": "medium_high",
+      "trigger_score": 78,
+      "trigger": {
+        "type": "combination_completion",
+        "condition": "流月补齐原局+大运+流年中的三合或三会结构"
+      },
+      "dependency": ["two_branches_already_exist_across_original_dayun_liunian", "monthly_branch_completes_valid_set"],
+      "affected_palace": ["参与三合/三会的原局支所在宫位"],
+      "possible_domains": ["career_momentum", "relationship_development", "networking", "family_or_home", "money_flow", "study_or_certification", "health_rhythm"],
+      "interpretation": "流月补齐三合或三会，表示某种五行气势在该月更集中，相关主题更容易形成合力、机会、牵连或连锁反应。",
+      "output_policy": {
+        "allowed": ["说明本月某五行/十神主题被集中放大", "提示相关事务可能更容易推进、聚合、成形"],
+        "forbidden": ["仅因补齐三合/三会就断大吉或大凶", "把半合、拱合等弱结构当完整三合局处理"],
+        "downgrade_rule": "若完整结构不触及原局月支、日支或已标记关键支，仅输出为观察月份。"
+      },
+      "evidence": ["已有两个组成支来自原局/大运/流年", "流月补齐第三支"],
+      "uncertainty": "medium；组合成局的实际强弱需看天干透出、季节旺衰、是否被冲破、是否触及关键宫位。"
+    },
+    {
+      "rule_id": "liuyue_stem_reveals_dayun_liunian_triggered_ten_god_v1",
+      "status": "candidate_rule",
+      "domain": "monthly_cycle",
+      "level": "month_window",
+      "subjectivity": "medium",
+      "trigger_score": 66,
+      "trigger": {
+        "type": "stem_reveal",
+        "condition": "流月天干透出大运或流年已经触发的十神"
+      },
+      "dependency": ["dayun_or_liunian_triggered_ten_god_exists", "monthly_stem_matches_same_ten_god"],
+      "affected_palace": ["以已触发岁运规则对应宫位为主"],
+      "possible_domains": ["career", "wealth", "relationship", "authority_or_pressure", "learning", "expression", "family", "social_visibility"],
+      "interpretation": "流月天干透出已被大运或流年触发的十神，表示该十神主题在本月更容易浮到表层。",
+      "output_policy": {
+        "allowed": ["提示某十神主题本月显性化"],
+        "forbidden": ["仅凭流月天干断具体事件", "把十神简单等同于单一现实事件"]
+      },
+      "evidence": ["大运或流年已触发对应十神", "流月天干再次透出同一十神"],
+      "uncertainty": "medium；v1 暂作为候选规则，待十神触发链稳定后再自动启用。"
+    },
+    {
+      "rule_id": "liuyue_fuyin_original_day_or_month_branch_v1",
+      "status": "active_rule",
+      "domain": "monthly_cycle",
+      "level": "month_window",
+      "subjectivity": "medium",
+      "trigger_score": 62,
+      "trigger": {
+        "type": "branch_fuyin",
+        "condition": "流月地支与原局日支或月支伏吟"
+      },
+      "dependency": ["monthly_branch_equals_original_day_or_month_branch"],
+      "affected_palace": ["日支", "月支"],
+      "possible_domains": ["relationship", "career_environment", "family", "home", "self_state", "health_awareness"],
+      "interpretation": "流月伏吟表示对应宫位主题在该月重复、回响、加重感受或重新被看见。",
+      "output_policy": {
+        "allowed": ["提示旧问题、旧关系、旧安排被重新处理"],
+        "forbidden": ["见伏吟即断不利", "单独断关系破裂、工作变动、健康问题"],
+        "downgrade_rule": "若只有流月伏吟，且大运、流年未触发该宫位，必须降级为观察月份。"
+      },
+      "evidence": ["流月支与原局日支/月支相同"],
+      "uncertainty": "medium；伏吟偏向重复和显化，事件强弱取决于是否被岁运共同触发。"
+    },
+    {
+      "rule_id": "liuyue_fanyin_original_day_or_month_branch_v1",
+      "status": "active_rule",
+      "domain": "monthly_cycle",
+      "level": "month_window",
+      "subjectivity": "medium_high",
+      "trigger_score": 70,
+      "trigger": {
+        "type": "branch_fanyin",
+        "condition": "流月地支与原局日支或月支反吟，即形成六冲"
+      },
+      "dependency": ["monthly_branch_chongs_original_day_or_month_branch"],
+      "affected_palace": ["日支", "月支"],
+      "possible_domains": ["relationship_adjustment", "career_change_signal", "family_tension", "housing_movement", "collaboration_conflict", "health_awareness"],
+      "interpretation": "流月反吟表示对应宫位在该月出现对冲、变动、拉扯或外部刺激。",
+      "output_policy": {
+        "allowed": ["提示本月相关宫位容易有波动、冲突、调整或临时变化"],
+        "forbidden": ["单独断事故、离婚、离职、破财", "把反吟固定解释为灾"],
+        "downgrade_rule": "若流月反吟未得到大运或流年呼应，只能输出为观察月份或短期波动窗口。"
+      },
+      "evidence": ["流月支与原局日支/月支形成六冲"],
+      "uncertainty": "medium_high；反吟关注度高，但事件性质和大小不可由流月单独决定。"
+    },
+    {
+      "rule_id": "liuyue_window_only_no_major_event_judgment_v1",
+      "status": "guard_rule",
+      "domain": "output_control",
+      "level": "meta_rule",
+      "subjectivity": "low",
+      "trigger_score": 100,
+      "trigger": {
+        "type": "policy_guardrail",
+        "condition": "所有流月规则输出必须受月份窗口原则约束"
+      },
+      "dependency": ["liuyue_rule_triggered"],
+      "affected_palace": ["继承具体流月规则的 affected_palace"],
+      "possible_domains": ["all"],
+      "interpretation": "流月用于定位某个岁运主题更容易显化的月份，不用于单独判断重大事件的发生与性质。",
+      "output_policy": {
+        "allowed": ["月份窗口", "关注月份", "观察月份", "主题显化月份", "短期波动窗口"],
+        "forbidden": ["必然发生", "一定离婚", "一定破财", "一定生病", "一定离职", "单月定大事"],
+        "required_phrase": "该判断仅作为月份窗口，不单独构成大事判断。"
+      },
+      "evidence": ["流月规则依赖大运、流年、原局触发链", "流月本身周期短，适合作为时间定位而非事件定性"],
+      "uncertainty": "low；这是系统级输出约束，不属于命理判断本身。"
+    }
+  ]
+}

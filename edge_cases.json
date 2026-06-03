@@ -1,0 +1,23 @@
+[
+  {"year": 1990, "month": 1, "day": 1, "hour": 22, "minute": 59, "sex": 1},
+  {"year": 1990, "month": 1, "day": 1, "hour": 23, "minute": 0, "sex": 1},
+  {"year": 1990, "month": 1, "day": 1, "hour": 23, "minute": 59, "sex": 0},
+  {"year": 1990, "month": 1, "day": 2, "hour": 0, "minute": 0, "sex": 0},
+
+  {"year": 2024, "month": 2, "day": 4, "hour": 15, "minute": 59, "sex": 1},
+  {"year": 2024, "month": 2, "day": 4, "hour": 16, "minute": 0, "sex": 1},
+  {"year": 2024, "month": 2, "day": 4, "hour": 17, "minute": 0, "sex": 0},
+  {"year": 2024, "month": 2, "day": 5, "hour": 0, "minute": 0, "sex": 0},
+
+  {"year": 1990, "month": 1, "day": 5, "hour": 22, "minute": 0, "sex": 1},
+  {"year": 1990, "month": 1, "day": 5, "hour": 23, "minute": 0, "sex": 1},
+  {"year": 2020, "month": 3, "day": 5, "hour": 9, "minute": 0, "sex": 0},
+  {"year": 2020, "month": 3, "day": 5, "hour": 12, "minute": 0, "sex": 0},
+  {"year": 2026, "month": 5, "day": 5, "hour": 13, "minute": 0, "sex": 1},
+  {"year": 2026, "month": 5, "day": 5, "hour": 15, "minute": 0, "sex": 1},
+
+  {"year": 1904, "month": 2, "day": 29, "hour": 0, "minute": 0, "sex": 1},
+  {"year": 1988, "month": 2, "day": 29, "hour": 22, "minute": 59, "sex": 0},
+  {"year": 2000, "month": 2, "day": 29, "hour": 23, "minute": 0, "sex": 1},
+  {"year": 2024, "month": 2, "day": 29, "hour": 12, "minute": 34, "sex": 0}
+]

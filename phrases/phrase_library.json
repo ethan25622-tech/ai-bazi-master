@@ -1,0 +1,740 @@
+{
+  "phrase_set": {
+    "name": "modern_phrase_library_v1",
+    "version": "0.2",
+    "source_port": "资料口 4 修正版 + B口第三批规则"
+  },
+  "phrases": [
+    {
+      "phrase_id": "pattern_004_resource_learning",
+      "domain": "学业与学习方式",
+      "status": "active_phrase",
+      "required_confidence": 0.62,
+      "sensitivity": "low",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "pattern",
+        "strength"
+      ],
+      "rule_bindings": [
+        "pattern_004"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "印格信号提示学习、资质、系统吸收与稳定承接能力较突出。",
+      "conservative_expression": "可作为复核点：命局有印格候选，较适合系统学习、资质积累和有方法论的成长路径。",
+      "direct_expression": "学习和专业背书往往是重要优势。",
+      "fallback_phrase": "规则层提示印格倾向，仍需结合全局强弱、财印关系和官杀是否护印后再定论。",
+      "forbidden_claims": [
+        "不要断一定高学历",
+        "不要断考试必过",
+        "不要断家境一定好"
+      ]
+    },
+    {
+      "phrase_id": "pattern_004_resource_career",
+      "domain": "事业与职业方向",
+      "status": "active_phrase",
+      "required_confidence": 0.62,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "pattern",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "pattern_004",
+        "medicine_type_009"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "适合在重视规范、凭证、知识沉淀和组织支持的环境中发展。",
+      "conservative_expression": "提示某种结构倾向：事业上可优先观察专业资质、稳定平台、长线积累是否更能发挥。",
+      "direct_expression": "职业路径不宜只靠短线爆发，更适合靠专业信用慢慢累积。",
+      "fallback_phrase": "印格或护格信号只说明专业承接方向值得复核，不等于职位、名声或贵人必然出现。",
+      "forbidden_claims": [
+        "不要断一定升职",
+        "不要断一定有贵人",
+        "不要断一定进入体制"
+      ]
+    },
+    {
+      "phrase_id": "pattern_005_output_career",
+      "domain": "事业与职业方向",
+      "status": "active_phrase",
+      "required_confidence": 0.62,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "pattern",
+        "strength"
+      ],
+      "rule_bindings": [
+        "pattern_005"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "食神格信号偏向稳定输出、技能沉淀、作品表达和温和变现。",
+      "conservative_expression": "可作为复核点：命局有食神格候选，较适合把技能、经验、内容或服务做成可见成果。",
+      "direct_expression": "越能持续输出作品和方法，事业越容易打开。",
+      "fallback_phrase": "规则层提示食神格倾向，仍需结合是否清纯、是否生财、是否被偏印夺食来复核。",
+      "forbidden_claims": [
+        "不要断一定成名",
+        "不要断一定创业成功",
+        "不要断一定靠才艺发财"
+      ]
+    },
+    {
+      "phrase_id": "pattern_005_output_money",
+      "domain": "财运与赚钱方式",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "pattern",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "pattern_005"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "财务表达上更适合靠长期技能、稳定服务和内容产品慢慢形成回报。",
+      "conservative_expression": "若食神生财同时成立，可观察技能输出与收入之间的连接。",
+      "direct_expression": "适合靠作品、手艺、专业服务或持续经营赚钱。",
+      "fallback_phrase": "食神格只提示能力变现方向，不能直接推断收入规模，也不构成投资或创业建议。",
+      "forbidden_claims": [
+        "不要给投资建议",
+        "不要断一定暴富",
+        "不要断副业一定成功"
+      ]
+    },
+    {
+      "phrase_id": "pattern_006_seven_kill_career",
+      "domain": "事业与职业方向",
+      "status": "guarded_phrase",
+      "required_confidence": 0.72,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "pattern",
+        "strength"
+      ],
+      "rule_bindings": [
+        "pattern_006"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "七杀格信号提示压力、竞争、执行强度和责任边界是重要观察点。",
+      "conservative_expression": "可作为复核点：若七杀有制有化，较适合在目标清晰、有压力但规则明确的环境中锻炼能力。",
+      "direct_expression": "越是有挑战的任务，越可能逼出执行力。",
+      "fallback_phrase": "七杀格争议较高，必须结合制化、日主承载和官杀清浊复核，只能保守提示承压与竞争主题。",
+      "forbidden_claims": [
+        "不要断一定有灾",
+        "不要断危险职业",
+        "不要断必有官非"
+      ]
+    },
+    {
+      "phrase_id": "pattern_007_hurting_officer_expression",
+      "domain": "性格与行为模式",
+      "status": "guarded_phrase",
+      "required_confidence": 0.72,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "pattern",
+        "strength"
+      ],
+      "rule_bindings": [
+        "pattern_007"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "伤官格信号提示表达、创新、质疑规则和自我主张较明显。",
+      "conservative_expression": "提示某种结构倾向：表达能力可能是优势，但也要复核是否与规则、职位或权威产生张力。",
+      "direct_expression": "有想法，也容易不喜欢被僵硬规则限制。",
+      "fallback_phrase": "伤官格对组合顺序很敏感，仍需结合财、印、合化和通关复核，不等于确定冲突事件。",
+      "forbidden_claims": [
+        "不要断必与上级不合",
+        "不要断官非",
+        "不要断被辞退"
+      ]
+    },
+    {
+      "phrase_id": "pattern_007_hurting_officer_risk",
+      "domain": "风险提示",
+      "status": "guarded_phrase",
+      "required_confidence": 0.75,
+      "sensitivity": "high",
+      "output_mode": "both",
+      "tone": "warning",
+      "evidence_keys": [
+        "pattern",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "pattern_007",
+        "medicine_type_003"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "若出现伤官见官或表达与规则相冲，风险多在沟通方式、流程意识和权责边界。",
+      "conservative_expression": "可作为复核点：正式场合宜降低情绪化表达，先把规则、证据和流程理清。",
+      "direct_expression": "话太直或流程意识不足，容易让能力打折。",
+      "fallback_phrase": "伤官见官只能提示表达与规则的张力，不等于确定官非、失业或负面事件。",
+      "forbidden_claims": [
+        "不要断官非",
+        "不要断牢狱",
+        "不要断必被辞退",
+        "不要输出绝对凶断"
+      ]
+    },
+    {
+      "phrase_id": "pattern_009_peer_boundary",
+      "domain": "性格与行为模式",
+      "status": "active_phrase",
+      "required_confidence": 0.62,
+      "sensitivity": "low",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "pattern",
+        "strength"
+      ],
+      "rule_bindings": [
+        "pattern_009"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "建禄月劫信号提示自主性、同辈竞争、行动力和资源边界是重点。",
+      "conservative_expression": "提示某种结构倾向：自我驱动力较强，适合有自主空间的环境，但合作边界要清楚。",
+      "direct_expression": "越靠自己越容易有劲，但合伙和人情账要讲清楚。",
+      "fallback_phrase": "建禄月劫需联合身强、阳刃、从旺和财官食伤出口复核，不宜单独定论。",
+      "forbidden_claims": [
+        "不要断一定孤僻",
+        "不要断朋友一定损财",
+        "不要断合伙必败"
+      ]
+    },
+    {
+      "phrase_id": "medicine_001_balance",
+      "domain": "修正建议",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "strength",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "medicine_type_001"
+      ],
+      "machine_condition": {
+        "requires": [
+          "strength.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "扶抑病药提示强弱平衡需要复核，重点是看扶、泄、耗、制是否真正改善结构。",
+      "conservative_expression": "可作为复核点：先确认日主强弱是否可靠，再判断该补承载力还是释放过旺能量。",
+      "direct_expression": "先校准强弱，再谈用神方向。",
+      "fallback_phrase": "扶抑规则只提示平衡方向，仍需结合月令、根气、格局与调候，不等于绝对吉凶。",
+      "forbidden_claims": [
+        "不要断绝对吉凶",
+        "不要单凭强弱定成败",
+        "不要替代全局取用"
+      ]
+    },
+    {
+      "phrase_id": "medicine_002_climate",
+      "domain": "健康与生活习惯提醒",
+      "status": "guarded_phrase",
+      "required_confidence": 0.75,
+      "sensitivity": "high",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "health_mapping",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "medicine_type_002"
+      ],
+      "machine_condition": {
+        "requires": [
+          "tiaohou.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "调候病药提示寒暖燥湿的适配问题，适合转成作息、环境和节奏管理建议。",
+      "conservative_expression": "可作为复核点：生活上重视睡眠、压力、环境冷热和规律节奏，不作医学判断。",
+      "direct_expression": "环境和节奏对状态影响会更明显。",
+      "fallback_phrase": "调候只做生活习惯提醒，不能诊断疾病，也不能替代医生意见。",
+      "forbidden_claims": [
+        "不要医学诊断",
+        "不要建议治疗方案",
+        "不要断一定生病",
+        "不要替代医生建议"
+      ]
+    },
+    {
+      "phrase_id": "medicine_003_tongguan",
+      "domain": "修正建议",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "chong_he",
+        "pattern"
+      ],
+      "rule_bindings": [
+        "medicine_type_003"
+      ],
+      "machine_condition": {
+        "requires": [
+          "chong_he.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "通关病药提示冲突双方之间可能需要一个转换路径或缓冲机制。",
+      "conservative_expression": "提示某种结构倾向：遇到对立主题时，宜寻找中介资源、流程或第三种表达方式来缓和。",
+      "direct_expression": "关键不是硬冲，而是找到能把两边接起来的桥。",
+      "fallback_phrase": "通关是否有效依赖力量排序，仍需结合全局复核，不等于冲突一定解除。",
+      "forbidden_claims": [
+        "不要断一定化解",
+        "不要断一定转吉",
+        "不要输出绝对吉凶"
+      ]
+    },
+    {
+      "phrase_id": "medicine_004_qingzhuo",
+      "domain": "风险提示",
+      "status": "guarded_phrase",
+      "required_confidence": 0.75,
+      "sensitivity": "high",
+      "output_mode": "both",
+      "tone": "warning",
+      "evidence_keys": [
+        "pattern",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "medicine_type_004"
+      ],
+      "machine_condition": {
+        "requires": [
+          "wealth.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "清浊病药提示结构中可能存在混杂、并见或用忌不清。",
+      "conservative_expression": "可作为复核点：方向选择要更谨慎，先分清主次、去留和实际可用的核心力量。",
+      "direct_expression": "结构复杂时，最怕什么都想抓，反而没有主线。",
+      "fallback_phrase": "清浊判断高度依赖全局，不等于确定财务、事业或关系结果，只能提示取舍风险。",
+      "forbidden_claims": [
+        "不要断破产",
+        "不要给投资建议",
+        "不要断事业失败",
+        "不要绝对凶断"
+      ]
+    },
+    {
+      "phrase_id": "medicine_005_excess",
+      "domain": "修正建议",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "strength",
+        "pattern"
+      ],
+      "rule_bindings": [
+        "medicine_type_005"
+      ],
+      "machine_condition": {
+        "requires": [
+          "strength.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "过旺泄耗病药提示某类力量过集中时，需要通过输出、经营、规则或责任来疏导。",
+      "conservative_expression": "提示某种结构倾向：能量偏旺时，不宜硬压，宜观察泄、耗、制哪条路径更顺。",
+      "direct_expression": "力量太满时，要有出口，否则容易内耗或变成对抗。",
+      "fallback_phrase": "过旺与从旺边界需复核，此条只提示调节方向，不等于绝对吉凶。",
+      "forbidden_claims": [
+        "不要断一定失控",
+        "不要断一定出事",
+        "不要绝对吉凶断语"
+      ]
+    },
+    {
+      "phrase_id": "medicine_006_weak_support",
+      "domain": "修正建议",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "strength",
+        "pattern"
+      ],
+      "rule_bindings": [
+        "medicine_type_006"
+      ],
+      "machine_condition": {
+        "requires": [
+          "strength.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "过弱扶助病药提示承载力、资源支持和基础恢复需要优先观察。",
+      "conservative_expression": "可作为复核点：先补稳定性、专业支持、团队或节奏，再谈扩张和高压任务。",
+      "direct_expression": "先接得住，再做大。",
+      "fallback_phrase": "弱而扶或弱而从需结合从格与全局复核，此条只提示承载力管理。",
+      "forbidden_claims": [
+        "不要断一定弱势",
+        "不要断一定失败",
+        "不要给融资或投资建议"
+      ]
+    },
+    {
+      "phrase_id": "medicine_007_chonghe_change",
+      "domain": "迁移、出行、变动",
+      "status": "guarded_phrase",
+      "required_confidence": 0.72,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "chong_he",
+        "luck_cycle"
+      ],
+      "rule_bindings": [
+        "medicine_type_007"
+      ],
+      "machine_condition": {
+        "requires": [
+          "chong_he.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "冲合刑害病药提示某些宫位或用神关系被引动，适合转成变动、协调和复核提醒。",
+      "conservative_expression": "提示某种结构倾向：相关主题可能有调整、拉扯或重新排列，需要结合位置和用神判断。",
+      "direct_expression": "有动象，但动不等于坏。",
+      "fallback_phrase": "冲合刑害只代表结构被触发，不等于确定事件，更不能见冲就断灾。",
+      "forbidden_claims": [
+        "不要见冲断灾",
+        "不要断事故",
+        "不要断离婚",
+        "不要断死亡"
+      ]
+    },
+    {
+      "phrase_id": "medicine_008_pressure",
+      "domain": "风险提示",
+      "status": "guarded_phrase",
+      "required_confidence": 0.75,
+      "sensitivity": "high",
+      "output_mode": "both",
+      "tone": "warning",
+      "evidence_keys": [
+        "strength",
+        "pattern"
+      ],
+      "rule_bindings": [
+        "medicine_type_008"
+      ],
+      "machine_condition": {
+        "requires": [
+          "strength.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "克泄交加病药提示压力与消耗可能同时出现，重点在承载力和节奏管理。",
+      "conservative_expression": "可作为复核点：任务、责任和输出不宜同时过量，先稳基础再推进。",
+      "direct_expression": "压力和消耗并来时，硬扛的成本会变高。",
+      "fallback_phrase": "克泄交加只提示承载压力，不等于疾病、灾祸或失败事件。",
+      "forbidden_claims": [
+        "不要医学诊断",
+        "不要断出灾",
+        "不要断一定失败",
+        "不要绝对凶断"
+      ]
+    },
+    {
+      "phrase_id": "medicine_009_protect_pattern",
+      "domain": "优势建议",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "pattern",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "medicine_type_009"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "格局护卫病药提示主线已见，但需要保护核心结构，避免被破格因素带偏。",
+      "conservative_expression": "可作为复核点：先确认主格核心，再看护格、救格之力是否真实有效。",
+      "direct_expression": "先守住主线，再谈发挥。",
+      "fallback_phrase": "护格规则依赖已有格局判断质量，只提示保护方向，不改写主格结论。",
+      "forbidden_claims": [
+        "不要断一定成格",
+        "不要断一定救应成功",
+        "不要绝对吉凶断语"
+      ]
+    },
+    {
+      "phrase_id": "wealth_003_peer_money_boundary",
+      "domain": "财运与赚钱方式",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "warning",
+      "evidence_keys": [
+        "pattern",
+        "strength",
+        "yong_shen"
+      ],
+      "rule_bindings": [
+        "pattern_009",
+        "medicine_type_004"
+      ],
+      "machine_condition": {
+        "requires": [
+          "pattern.executable_rule_ids"
+        ]
+      },
+      "modern_expression": "财务上容易受到合作、人情、同辈竞争或边界不清的影响。",
+      "conservative_expression": "赚钱不难时，也要注意守财、分账、合伙规则和人情边界。",
+      "direct_expression": "合伙、借钱、人情往来容易让钱留不住。",
+      "fallback_phrase": "财务边界需要留意，尤其涉及合作与人情往来时宜更清晰；不提供投资建议，也不判断具体盈亏。",
+      "forbidden_claims": [
+        "不要断破产",
+        "不要断被骗",
+        "不要给投资建议",
+        "不要断一定贫穷"
+      ]
+    },
+    {
+      "phrase_id": "relationship_002_change_guard",
+      "domain": "婚恋与亲密关系",
+      "status": "guarded_phrase",
+      "required_confidence": 0.75,
+      "sensitivity": "high",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "chong_he",
+        "liuqin",
+        "luck_cycle"
+      ],
+      "rule_bindings": [
+        "medicine_type_007",
+        "year_001",
+        "luck_004"
+      ],
+      "machine_condition": {
+        "requires": [
+          "chong_he_or_luck_cycle"
+        ]
+      },
+      "modern_expression": "亲密关系中容易出现节奏不稳、距离变化、观念冲突或阶段性调整。",
+      "conservative_expression": "感情关系需要更多沟通和边界协调，尤其在变动期要避免冲动决定。",
+      "direct_expression": "恋爱或婚姻里容易有分合、异地、冷战或现实阻力。",
+      "fallback_phrase": "关系宫位有变动信号，可提醒重视沟通和节奏，不宜直接判断婚姻结果。",
+      "forbidden_claims": [
+        "不要直接断离婚",
+        "不要断克配偶",
+        "不要断婚姻必败",
+        "不要断一定分手"
+      ]
+    },
+    {
+      "phrase_id": "health_001_lifestyle_guard",
+      "domain": "健康与生活习惯提醒",
+      "status": "guarded_phrase",
+      "required_confidence": 0.75,
+      "sensitivity": "high",
+      "output_mode": "both",
+      "tone": "warm_advice",
+      "evidence_keys": [
+        "health_mapping",
+        "strength"
+      ],
+      "rule_bindings": [
+        "medicine_type_002",
+        "medicine_type_008",
+        "luck_004"
+      ],
+      "machine_condition": {
+        "requires": [
+          "health_mapping_or_tiaohou"
+        ]
+      },
+      "modern_expression": "健康主题只适合输出生活习惯和压力管理提醒。",
+      "conservative_expression": "建议避免长期熬夜、过度透支和持续高压状态。",
+      "direct_expression": "越急越容易透支，身体和情绪都需要定期降速。",
+      "fallback_phrase": "这里只作作息、压力和生活节奏提醒，不作医学诊断，也不替代医生意见。",
+      "forbidden_claims": [
+        "不要医学诊断",
+        "不要诊断疾病",
+        "不要建议治疗",
+        "不要断一定生病"
+      ]
+    },
+    {
+      "phrase_id": "luck_annual_change_window",
+      "domain": "大运流年提醒",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "luck_cycle",
+        "chong_he"
+      ],
+      "rule_bindings": [
+        "luck_003",
+        "luck_004",
+        "luck_005",
+        "luck_006",
+        "luck_007",
+        "luck_008",
+        "year_001",
+        "year_002",
+        "year_003",
+        "year_004",
+        "year_005",
+        "year_006",
+        "year_007",
+        "year_008"
+      ],
+      "machine_condition": {
+        "requires": [
+          "luck_cycle.annual.triggers"
+        ]
+      },
+      "modern_expression": "岁运触发只代表相关主题被引动或关注度上升。",
+      "conservative_expression": "适合把该阶段视为观察和调整窗口，重要决定宜多做预案。",
+      "direct_expression": "这一阶段主题感会更强，但不直接代表好坏。",
+      "fallback_phrase": "岁运分数只代表关注度，不代表吉凶；触发信号不等于确定事件。",
+      "forbidden_claims": [
+        "不要断一定失业",
+        "不要断一定离婚",
+        "不要断一定破产",
+        "不要断一定死亡",
+        "不要断一定出灾"
+      ]
+    },
+    {
+      "phrase_id": "luck_month_window",
+      "domain": "大运流年提醒",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "luck_cycle"
+      ],
+      "rule_bindings": [
+        "liuyue_branch_chong_year_activated_key_branch_v1",
+        "liuyue_complete_sanhe_sanhui_from_original_dayun_liunian_v1",
+        "liuyue_stem_reveals_dayun_liunian_triggered_ten_god_v1",
+        "liuyue_fuyin_original_day_or_month_branch_v1",
+        "liuyue_fanyin_original_day_or_month_branch_v1",
+        "liuyue_window_only_no_major_event_judgment_v1"
+      ],
+      "machine_condition": {
+        "requires": [
+          "luck_cycle.monthly_windows.windows"
+        ]
+      },
+      "modern_expression": "流月只用于定位岁运主题更容易显化的月份窗口。",
+      "conservative_expression": "本月可作为观察窗口，适合关注相关主题的推进、反复或短期波动。",
+      "direct_expression": "这个月主题更容易浮到表面。",
+      "fallback_phrase": "该判断仅作为月份窗口，不单独构成大事判断，也不直接判断吉凶。",
+      "forbidden_claims": [
+        "不要单月定大事",
+        "不要断一定离婚",
+        "不要断一定破财",
+        "不要断一定生病",
+        "不要断一定离职"
+      ]
+    },
+    {
+      "phrase_id": "luck_daily_filter_window",
+      "domain": "大运流年提醒",
+      "status": "guarded_phrase",
+      "required_confidence": 0.7,
+      "sensitivity": "medium",
+      "output_mode": "both",
+      "tone": "conservative",
+      "evidence_keys": [
+        "luck_cycle"
+      ],
+      "rule_bindings": [
+        "daily_filter_chong_activated_branch_v1",
+        "daily_filter_repeat_month_palace_trigger_v1",
+        "daily_filter_complete_existing_combination_v1",
+        "luck_guard_001"
+      ],
+      "machine_condition": {
+        "requires": [
+          "luck_cycle.daily_filter.date_candidates"
+        ]
+      },
+      "modern_expression": "流日只用于上层岁运或流月窗口内的日期候选筛选。",
+      "conservative_expression": "这些日期只表示上层窗口内的关注度提高，不能当作某日事件判断。",
+      "direct_expression": "可以把这些日子看作窗口内的观察点。",
+      "fallback_phrase": "流日仅作为上层触发后的日期筛选，不单独构成事件判断，也不做每日泛断。",
+      "forbidden_claims": [
+        "不要每日泛断",
+        "不要断某日一定发生",
+        "不要标成吉日凶日",
+        "不要断死亡疾病破产离婚事故"
+      ]
+    }
+  ]
+}

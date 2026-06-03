@@ -1,0 +1,37 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local feedback and private runtime state
+feedback/
+.telegram_offset
+clipboard_fallback.txt
+tmp_in.txt
+
+# Generated reports and smoke-test output
+.public_package/
+ai-bazi-master-public.zip
+*_validation_report.json
+*_dry_run_report.json
+*_snapshot_report.json
+random_validation_report.*
+edge_validation_report.*
+early_year_probe_report.*
+year_1902_probe_report.*
+sample_report.md
+llm_prompt_sample.txt
+interactive_output_debug.txt
+interactive_validation_debug.txt
+early_rerun.txt
+year1902_rerun.txt
+
+# Local/private environment files
+.env
+*.local
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

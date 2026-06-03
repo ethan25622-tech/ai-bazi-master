@@ -1,0 +1,31 @@
+{
+  "dataset_name": "youtube_candidate_sources_v1",
+  "source_type": "YouTube案例讲解",
+  "gold_cases_from_youtube": [],
+  "policy": {
+    "gold_cases_rule": "只有视频中明确给出完整出生年月日时，且至少有可核验的明确年份事件，才可进入 gold_cases。",
+    "exclude_from_gold_when": ["出生时辰由博主推断/校正", "出生年月日时不完整", "只有博主口述判断，没有可核验事件", "事件没有明确年份"]
+  },
+  "youtube_case_sources": [
+    {
+      "source_id": "yt_candidate_001",
+      "video_title": "041 如何准确判断出生时辰 （案例） - 朱雀易学 山尘嫡传弟子班",
+      "channel_name": "学易",
+      "url": "https://www.youtube.com/watch?v=v7goV38f_wA",
+      "published_at": "2024-06-06",
+      "birth_data_status": "博主推断/校正",
+      "gold_case_eligible": false,
+      "classification": "reference_candidates"
+    },
+    {
+      "source_id": "yt_candidate_002",
+      "video_title": "146 由大运预示车祸信息流年应期分析 案例 - 朱雀易学 山尘嫡传弟子班",
+      "channel_name": "学易",
+      "url": "https://www.youtube.com/watch?v=IxBZNxJ0Doo",
+      "published_at": "2024-07-06",
+      "birth_data_status": "unknown",
+      "gold_case_eligible": false,
+      "classification": "reference_candidates"
+    }
+  ]
+}

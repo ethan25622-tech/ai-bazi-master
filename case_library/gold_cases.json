@@ -1,0 +1,13 @@
+{
+  "dataset_name": "gold_cases_v1",
+  "notes": "Gold cases are reserved for complete, externally verifiable cases. The first batch is intentionally empty until sources meet the admission policy.",
+  "gold_case_policy": {
+    "required_birth_fields": ["year", "month", "day", "hour", "minute"],
+    "birth_time_must_not_be": ["rectified", "blogger_inferred", "unknown"],
+    "minimum_known_events": 3,
+    "minimum_full_date_events": 1,
+    "external_source_required": true,
+    "auto_regression_requires_calendar_support": true
+  },
+  "cases": []
+}

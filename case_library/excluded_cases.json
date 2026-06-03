@@ -1,0 +1,5 @@
+{
+  "dataset_name": "excluded_cases_v1",
+  "notes": "Cases that should not be promoted to gold or reference intake until the exclusion reason is resolved.",
+  "cases": []
+}

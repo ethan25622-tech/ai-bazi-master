@@ -1,0 +1,156 @@
+{
+  "rule_set": {
+    "name": "core_mingli_rules_v1",
+    "version": "0.1",
+    "source_port": "资料口 3 修正版",
+    "statuses": ["active_rule", "candidate_rule", "manual_review", "guard_rule"]
+  },
+  "rules": [
+    {
+      "rule_id": "pattern_001",
+      "domain": "pattern",
+      "name": "月令定格",
+      "status": "active_rule",
+      "subjectivity": "medium",
+      "priority": 90,
+      "trigger": {"month_branch_exists": true, "month_hidden_stems_calculated": true},
+      "quantifiable_conditions": ["月令藏干与日主十神已计算", "月令藏干透出到天干者优先取格", "无透干时取月支本气或司令之气"],
+      "manual_review_points": ["人元司令精确分日存在流派差异", "成方成局是否改变月令主气需复核"],
+      "source": ["子平真诠·论用神", "子平真诠·论用神变化", "滴天髓·月令"],
+      "uncertainty": "月令取格可规则化，但司令、透藏轻重仍需人工复核"
+    },
+    {
+      "rule_id": "pattern_002",
+      "domain": "pattern",
+      "name": "正官格",
+      "status": "active_rule",
+      "subjectivity": "medium",
+      "priority": 85,
+      "trigger": {"month_command_ten_god": "正官"},
+      "quantifiable_conditions": ["月令本气或透干为正官", "伤官数量、位置、根气可计算", "官杀是否并见可计算"],
+      "manual_review_points": ["官杀混杂是否可清", "刑冲破害是否真正伤官星", "财印是否相碍"],
+      "source": ["子平真诠·论用神成败救应", "子平真诠·论用神纯杂"],
+      "uncertainty": "官杀混杂是否可清属于中等主观判断"
+    },
+    {
+      "rule_id": "pattern_003",
+      "domain": "pattern",
+      "name": "财格",
+      "status": "active_rule",
+      "subjectivity": "medium",
+      "priority": 82,
+      "trigger": {"month_command_ten_god": ["正财", "偏财"]},
+      "quantifiable_conditions": ["月令为正财或偏财", "财星透干或通根", "比劫数量和根气可计算"],
+      "manual_review_points": ["日主是否能任财", "财印是否相碍", "财生官是否有情"],
+      "source": ["子平真诠·论用神成败救应"],
+      "uncertainty": "身强身弱、能否任财需评分与人工复核结合"
+    },
+    {
+      "rule_id": "pattern_008",
+      "domain": "pattern",
+      "name": "阳刃格",
+      "status": "active_rule",
+      "subjectivity": "medium",
+      "priority": 78,
+      "trigger": {
+        "day_stem_month_branch_relation": "yang_blade",
+        "mapping": {"甲": "卯", "丙": "午", "戊": "午", "庚": "酉", "壬": "子"}
+      },
+      "quantifiable_conditions": ["日干为甲丙戊庚壬之一", "月支等于该日干帝旺羊刃位", "官杀是否透出可计算"],
+      "manual_review_points": ["阴干是否论刃存在流派差异", "官杀制刃是否太过或不及"],
+      "source": ["子平真诠·论阳刃", "渊海子平·论阳刃"],
+      "uncertainty": "阴干羊刃与月劫分法需按系统流派配置"
+    },
+    {
+      "rule_id": "special_001",
+      "domain": "special_pattern",
+      "name": "从格总则",
+      "status": "candidate_rule",
+      "subjectivity": "high",
+      "priority": 96,
+      "trigger": {"day_master_strength": "extremely_weak", "dominant_force_ratio_gte": 0.7},
+      "quantifiable_conditions": ["日主强弱评分低于20", "日主无月令根", "印比透干数量为0或无根", "某一五行或十神势力占比大于等于70%"],
+      "manual_review_points": ["假从与真从", "微根是否破从", "岁运是否使从格还原为普通格"],
+      "source": ["滴天髓·从象", "滴天髓·化象", "三命通会·论从化"],
+      "uncertainty": "从格需防止误判，默认候选规则"
+    },
+    {
+      "rule_id": "special_002",
+      "domain": "special_pattern",
+      "name": "化气格总则",
+      "status": "candidate_rule",
+      "subjectivity": "high",
+      "priority": 95,
+      "trigger": {"heavenly_stem_combination_exists": true},
+      "quantifiable_conditions": ["日干参与天干五合", "合化五行得月令或得地支成局", "化神透干或通根"],
+      "manual_review_points": ["合而不化", "妒合争合", "化神真假"],
+      "source": ["滴天髓·化象", "三命通会·论化气"],
+      "uncertainty": "真化假化必须人工复核"
+    },
+    {
+      "rule_id": "strength_001",
+      "domain": "day_master_strength",
+      "name": "得令得地得势",
+      "status": "active_rule",
+      "subjectivity": "medium",
+      "priority": 70,
+      "trigger": {"day_master_exists": true},
+      "quantifiable_conditions": ["得令：日主五行在月令旺相", "得地：地支有本气根、中气根、余气根", "得势：天干印比透出，地支合会生扶"],
+      "manual_review_points": ["合化后根气是否仍有效", "冲根是否完全拔根", "印比帮身是否被合去"],
+      "source": ["滴天髓·衰旺", "滴天髓·中和", "滴天髓·月令", "渊海子平·继善篇"],
+      "uncertainty": "评分体系为工程化抽象，不是古籍原文"
+    },
+    {
+      "rule_id": "quality_001",
+      "domain": "quality",
+      "name": "清浊纯杂",
+      "status": "manual_review",
+      "subjectivity": "high",
+      "priority": 68,
+      "trigger": {"pattern_detected": true},
+      "quantifiable_conditions": ["官杀是否并见可计算", "财印是否并见可计算", "用神、忌神是否透干通根可计算"],
+      "manual_review_points": ["用神是否明确", "混杂是否可清", "位置隔开是否不相碍"],
+      "source": ["滴天髓·清浊", "滴天髓·真假", "子平真诠·论用神纯杂"],
+      "uncertainty": "建议只输出质量标签和解释，不作硬判"
+    },
+    {
+      "rule_id": "flow_001",
+      "domain": "flow",
+      "name": "通关",
+      "status": "active_rule",
+      "subjectivity": "medium",
+      "priority": 72,
+      "trigger": {"two_elements_conflict": true},
+      "quantifiable_conditions": ["木土战取火通关", "土水战取金通关", "水火战取木通关", "火金战取土通关", "金木战取水通关"],
+      "manual_review_points": ["两方是否势均力敌", "是否真的需要通关", "通关神是否反成忌神"],
+      "source": ["滴天髓·源流", "滴天髓·通关", "滴天髓·恩怨"],
+      "uncertainty": "通关路径可量化，是否必要需复核"
+    },
+    {
+      "rule_id": "climate_001",
+      "domain": "useful_god",
+      "name": "调候用神优先",
+      "status": "active_rule",
+      "subjectivity": "high",
+      "priority": 95,
+      "trigger": {"climate_extreme": ["too_cold", "too_hot", "too_dry", "too_wet"]},
+      "quantifiable_conditions": ["出生月令季节可计算", "寒暖燥湿由月令、地支会局、天干透出综合评分", "调候神是否透干或通根可计算"],
+      "manual_review_points": ["调候是否急于格局", "调候神是否破格", "无调候是否全局偏枯"],
+      "source": ["穷通宝鉴·十干十二月取用", "滴天髓·寒暖", "滴天髓·燥湿"],
+      "uncertainty": "调候与格局用神冲突时流派差异明显"
+    },
+    {
+      "rule_id": "guard_001",
+      "domain": "guard_rule",
+      "name": "防止强行定格",
+      "status": "active_rule",
+      "subjectivity": "low",
+      "priority": 99,
+      "trigger": {"pattern_ambiguous": true},
+      "quantifiable_conditions": ["月令藏干无透出且本气不成势", "两个以上候选格优先级接近", "特殊格候选与普通格冲突", "月令被冲破且无救应"],
+      "manual_review_points": ["是否取大势而不定格", "是否暂以旺衰、调候、病药分析替代"],
+      "source": ["滴天髓·格局", "滴天髓·体用", "子平真诠·论用神变化"],
+      "uncertainty": "保护规则，不参与格局高低排序"
+    }
+  ]
+}

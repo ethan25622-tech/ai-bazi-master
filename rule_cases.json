@@ -1,0 +1,339 @@
+[
+  {
+    "name": "1990 baseline schema and core rules",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 1,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "schema_version": "ai-bazi-master.v1",
+      "chart": {
+        "pillars": {
+          "年柱": "己巳",
+          "月柱": "丙子",
+          "日柱": "丙寅",
+          "时柱": "戊子"
+        },
+        "day_master": "丙",
+        "month_command": "十一月"
+      },
+      "assessments": {
+        "pattern": {
+          "summary": "正官格：败"
+        },
+        "strength": {
+          "summary": "中和偏弱"
+        },
+        "luck_cycle": {
+          "summary": "大运列表已给出；指定 target_year 后接入大运/流年互动触发。"
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable pattern candidates and guard medicine",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 1,
+      "hour": 12,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "pattern": {
+          "summary": "正官格：救应",
+          "executable_rule_ids": [
+            "pattern_004",
+            "pattern_007",
+            "medicine_type_009"
+          ],
+          "executable_notes": [
+            "伤官配印候选",
+            "后置规则，只提示护格/救格方向，不改写主格"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable seven-killing candidate",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 2,
+      "hour": 12,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "pattern": {
+          "summary": "七杀格：成",
+          "executable_rule_ids": [
+            "pattern_006"
+          ],
+          "executable_notes": [
+            "食神制杀候选"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable shangguan seeing official marker",
+    "input": {
+      "year": 1990,
+      "month": 2,
+      "day": 7,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "pattern": {
+          "summary": "伤官格：败",
+          "executable_rule_ids": [
+            "pattern_004",
+            "pattern_007"
+          ],
+          "executable_notes": [
+            "官杀护印/化杀生身候选",
+            "伤官见官",
+            "伤官配印候选"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable eating-god pattern",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 12,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "pattern": {
+          "summary": "食神格：成",
+          "executable_rule_ids": [
+            "pattern_005"
+          ],
+          "executable_notes": [
+            "食神生财候选"
+          ],
+          "executable_manual_review_required": true
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable jianlu-yuejie candidate",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 7,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "pattern": {
+          "summary": "正官格：成",
+          "executable_rule_ids": [
+            "pattern_004",
+            "pattern_009"
+          ],
+          "executable_notes": [
+            "财星破印复核",
+            "官杀护印/化杀生身候选",
+            "财星出口候选",
+            "官杀制劫候选"
+          ],
+          "executable_manual_review_required": true
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable yang-blade candidate",
+    "input": {
+      "year": 1907,
+      "month": 1,
+      "day": 3,
+      "hour": 12,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "pattern": {
+          "executable_rule_ids": [
+            "pattern_004",
+            "pattern_009",
+            "pattern_008"
+          ],
+          "executable_notes": [
+            "财星破印复核",
+            "财星出口候选",
+            "印星助刃复核",
+            "财星耗刃候选"
+          ],
+          "executable_manual_review_required": true
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable chong-he-xing-hai medicine",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 1,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "chong_he": {
+          "executable_rule_ids": [
+            "medicine_type_007"
+          ],
+          "executable_notes": [
+            "冲合刑害已见事实，需结合位置与用神人工复核"
+          ],
+          "executable_manual_review_required": true
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable tongguan medicine",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 3,
+      "hour": 6,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "chong_he": {
+          "executable_rule_ids": [
+            "medicine_type_007",
+            "medicine_type_003"
+          ],
+          "executable_notes": [
+            "冲合刑害已见事实，需结合位置与用神人工复核",
+            "官杀-印-日主通关候选"
+          ],
+          "executable_manual_review_required": true
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable support-suppress and excess-drain medicines",
+    "input": {
+      "year": 1990,
+      "month": 1,
+      "day": 7,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "strength": {
+          "summary": "偏强",
+          "executable_rule_ids": [
+            "medicine_type_001",
+            "medicine_type_005"
+          ],
+          "executable_notes": [
+            "扶抑候选：日主偏强，优先复核泄、耗、制方向",
+            "过旺泄耗候选：财星耗旺",
+            "过旺泄耗候选：官杀制旺"
+          ],
+          "executable_manual_review_required": true,
+          "manual_review_required": true
+        },
+        "tiaohou": {
+          "executable_rule_ids": [
+            "medicine_type_002"
+          ],
+          "executable_notes": [
+            "调候药不足候选：首选/次选均未透"
+          ],
+          "executable_manual_review_required": true,
+          "manual_review_required": true
+        },
+        "wealth": {
+          "executable_rule_ids": [
+            "medicine_type_004"
+          ],
+          "executable_notes": [
+            "清浊复核：格局整体偏清",
+            "两不相谋候选：正财与偏印"
+          ],
+          "executable_manual_review_required": true,
+          "manual_review_required": true
+        }
+      }
+    }
+  },
+  {
+    "name": "B expansion executable weak-support and attack-drain medicines",
+    "input": {
+      "year": 1988,
+      "month": 12,
+      "day": 7,
+      "hour": 0,
+      "minute": 0,
+      "longitude": 120,
+      "gender": "男"
+    },
+    "expect": {
+      "assessments": {
+        "strength": {
+          "summary": "偏弱",
+          "executable_rule_ids": [
+            "medicine_type_001",
+            "medicine_type_006",
+            "medicine_type_008"
+          ],
+          "executable_notes": [
+            "扶抑候选：日主偏弱，优先复核印、比扶助方向",
+            "过弱扶助候选：印星扶身",
+            "克泄交加候选：官杀克身与食伤泄身并见"
+          ],
+          "executable_manual_review_required": true,
+          "manual_review_required": true
+        }
+      }
+    }
+  }
+]

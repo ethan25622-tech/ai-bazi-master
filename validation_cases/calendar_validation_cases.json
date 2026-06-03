@@ -1,0 +1,36 @@
+{
+  "dataset_name": "calendar_validation_port_5_candidate",
+  "dataset_status": "candidate_calendar_validation_set",
+  "default_day_boundary": "23:00",
+  "calendar_cases_zi_23": [
+    {
+      "case_id": "calendar_003_zi_hour_dispute",
+      "input": {"year": 2024, "month": 2, "day": 4, "hour": 23, "minute": 30, "longitude": 120, "gender": "男", "day_boundary": "23:00"},
+      "expected": {"year_pillar": "甲辰", "month_pillar": "丙寅", "day_pillar": "己亥", "hour_pillar": "甲子", "dayun_direction": "顺"},
+      "source": "HKO Solar Term; UTC+8; Zi boundary standard"
+    },
+    {
+      "case_id": "calendar_008_daxue_before_zi",
+      "purpose": "solar_term_precision_boundary",
+      "input": {"year": 2024, "month": 12, "day": 6, "hour": 23, "minute": 16, "longitude": 120, "gender": "男", "day_boundary": "23:00"},
+      "expected": {"year_pillar": "甲辰", "month_pillar": "乙亥", "day_pillar": "乙巳", "hour_pillar": "丙子", "dayun_direction": "顺"},
+      "source": "HKO Solar Term; UTC+8; Zi boundary standard"
+    },
+    {
+      "case_id": "calendar_009_daxue_after_zi",
+      "purpose": "solar_term_precision_boundary",
+      "input": {"year": 2024, "month": 12, "day": 6, "hour": 23, "minute": 18, "longitude": 120, "gender": "男", "day_boundary": "23:00"},
+      "expected": {"year_pillar": "甲辰", "month_pillar": "丙子", "day_pillar": "乙巳", "hour_pillar": "丙子", "dayun_direction": "顺"},
+      "source": "HKO Solar Term; UTC+8; Zi boundary standard"
+    }
+  ],
+  "input_validation_error_cases": [
+    {
+      "case_id": "calendar_012_dst_nonexistent_time",
+      "test_type": "input_validation_error",
+      "input": {"year": 1991, "month": 4, "day": 14, "hour": 2, "minute": 30, "timezone": "Asia/Shanghai", "longitude": 120, "gender": "男"},
+      "expected_error": {"error_code": "NONEXISTENT_LOCAL_TIME_DUE_TO_DST"},
+      "source": "timeanddate China DST 1991"
+    }
+  ]
+}
