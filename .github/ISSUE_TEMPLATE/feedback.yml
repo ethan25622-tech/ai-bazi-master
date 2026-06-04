@@ -1,0 +1,97 @@
+name: Test feedback
+description: Share feedback from testing AI Bazi Master
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing. Please do not post real names, phone numbers, addresses, private chat logs, ID/passport information, or birth data of another person without permission.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or download date
+      description: Example: downloaded from main branch on 2026-06-04
+      placeholder: "downloaded on YYYY-MM-DD"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: tester_type
+    attributes:
+      label: What did you test?
+      options:
+        - My own chart
+        - An anonymized chart
+        - A public figure / reference case
+        - I only tested startup or installation
+    validations:
+      required: true
+
+  - type: textarea
+    id: input_summary
+    attributes:
+      label: Input summary
+      description: Please anonymize. Do not include real names or private details.
+      placeholder: "Gender, approximate birth date/time, approximate location or longitude, target year/month if used."
+    validations:
+      required: false
+
+  - type: textarea
+    id: accurate_parts
+    attributes:
+      label: What felt accurate or useful?
+      placeholder: "Which sections or sentences matched the real situation?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: inaccurate_parts
+    attributes:
+      label: What felt inaccurate, vague, or unhelpful?
+      placeholder: "Please paste the relevant paragraph if possible, after removing private data."
+    validations:
+      required: false
+
+  - type: textarea
+    id: luck_cycle_feedback
+    attributes:
+      label: Luck-cycle / year / month feedback
+      description: Feedback about big luck cycles, annual luck, monthly windows, and advice.
+      placeholder: "Were the years/months useful? Were good and caution points balanced enough?"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: readability
+    attributes:
+      label: Readability
+      options:
+        - Easy to understand
+        - Mostly understandable
+        - Too vague
+        - Too technical
+        - Too long
+        - Too short
+    validations:
+      required: false
+
+  - type: textarea
+    id: error_details
+    attributes:
+      label: Error or startup problem
+      description: If something failed, paste the error text or attach a screenshot with private data removed.
+      placeholder: "What did you click/run, and what happened?"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety_check
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed private information before posting.
+          required: true
+        - label: I am not posting another person's private birth data without permission.
+          required: true

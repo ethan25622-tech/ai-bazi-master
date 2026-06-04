@@ -24,6 +24,16 @@ excludes local feedback and generated artifacts such as:
 Public case files should only contain synthetic fixtures, anonymized cases, or
 public reference cases that follow the policy in `case_library/README.md`.
 
+## Feedback
+
+Public testers can submit feedback through GitHub Issues:
+
+https://github.com/ethan25622-tech/ai-bazi-master/issues/new/choose
+
+Please do not post real names, phone numbers, addresses, private chat logs,
+ID/passport information, or another person's full birth data without permission.
+For details, see `FEEDBACK.md`.
+
 ## Stable Master Interface
 
 Run the simple interactive version:
