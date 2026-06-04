@@ -1,17 +1,23 @@
-# AI Bazi Master Command Center
+# AI Bazi Master Command Center / AI 八字解读项目
 
 This workspace is now the command center for the AI Bazi master project.  It
 bundles the legacy calculation scripts in `bazi_legacy/`, and adds a stable
 orchestration layer in `bazi_master`.
 
+这是 AI 八字解读项目的公开测试版。项目把基础排盘、规则资料库、格局/强弱/用神判断、
+大运流年流月提示、安全表达层和可读报告组合在一起，目标是让不懂八字的人也能阅读和测试。
+
 For a compact handoff of the current stable state, validation gate, guard
 contract, and remaining non-blocking work, see `PROJECT_HANDOFF.md`.
 
-## Privacy Before Public Testing
+## Privacy Before Public Testing / 公开测试前的隐私提醒
 
 Do not commit private birth data, personal feedback, raw chat logs, bot offsets,
 clipboard dumps, or generated local reports.  The repository `.gitignore`
 excludes local feedback and generated artifacts such as:
+
+请不要提交私人出生信息、个人反馈原文、聊天记录、机器人 offset、剪贴板缓存或本地生成报告。
+仓库的 `.gitignore` 已排除这些本地文件：
 
 - `feedback/`
 - `.telegram_offset`
@@ -24,9 +30,13 @@ excludes local feedback and generated artifacts such as:
 Public case files should only contain synthetic fixtures, anonymized cases, or
 public reference cases that follow the policy in `case_library/README.md`.
 
-## Feedback
+公开案例文件只应包含合成样例、匿名案例，或符合 `case_library/README.md`
+规则的公开参考案例。
+
+## Feedback / 反馈
 
 Public testers can submit feedback through GitHub Issues:
+公开测试者可以通过 GitHub Issues 提交反馈：
 
 https://github.com/ethan25622-tech/ai-bazi-master/issues/new/choose
 
@@ -34,17 +44,23 @@ Please do not post real names, phone numbers, addresses, private chat logs,
 ID/passport information, or another person's full birth data without permission.
 For details, see `FEEDBACK.md`.
 
-## Stable Master Interface
+请不要公开发布真实姓名、电话、地址、私人聊天记录、身份证/护照信息，
+或未经允许的他人完整出生信息。详情见 `FEEDBACK.md`。
+
+## Stable Master Interface / 稳定使用入口
 
 Run the simple interactive version:
+运行最简单的交互版：
 
 ```powershell
 .\ask_bazi.cmd
 ```
 
 It will ask for birth date, gender, optional target year/month, print a readable report, then let you type follow-up questions in plain text.
+它会依次询问生日、性别、可选流年/流月，然后输出可读解盘，并允许你继续用普通文字追问。
 
 Run a structured analysis:
+运行结构化分析：
 
 ```powershell
 .\run_master.cmd --year 1990 --month 1 --day 1 --hour 0 --minute 0 --longitude 120 --gender 男

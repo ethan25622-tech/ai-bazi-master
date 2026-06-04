@@ -1,18 +1,22 @@
-name: Test feedback
-description: Share feedback from testing AI Bazi Master
+name: Test feedback / 测试反馈
+description: Share feedback from testing AI Bazi Master / 提交 AI Bazi Master 测试反馈
 title: "[Feedback] "
 labels: ["feedback"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for testing. Please do not post real names, phone numbers, addresses, private chat logs, ID/passport information, or birth data of another person without permission.
+        Thank you for testing AI Bazi Master.
+        感谢你测试 AI Bazi Master。
+
+        Please do not post real names, phone numbers, addresses, private chat logs, ID/passport information, or birth data of another person without permission.
+        请不要公开发布真实姓名、电话、地址、私人聊天记录、身份证/护照信息，或未经允许的他人出生信息。
 
   - type: input
     id: version
     attributes:
-      label: Version or download date
-      description: Example: downloaded from main branch on 2026-06-04
+      label: Version or download date / 版本或下载日期
+      description: "Example / 示例: downloaded from main branch on 2026-06-04"
       placeholder: "downloaded on YYYY-MM-DD"
     validations:
       required: false
@@ -20,78 +24,78 @@ body:
   - type: dropdown
     id: tester_type
     attributes:
-      label: What did you test?
+      label: What did you test? / 你测试的是哪类命盘？
       options:
-        - My own chart
-        - An anonymized chart
-        - A public figure / reference case
-        - I only tested startup or installation
+        - My own chart / 自己的命盘
+        - An anonymized chart / 匿名命盘
+        - A public figure / reference case / 公开人物或参考案例
+        - I only tested startup or installation / 只测试了启动或安装
     validations:
       required: true
 
   - type: textarea
     id: input_summary
     attributes:
-      label: Input summary
-      description: Please anonymize. Do not include real names or private details.
-      placeholder: "Gender, approximate birth date/time, approximate location or longitude, target year/month if used."
+      label: Input summary / 输入信息概述
+      description: Please anonymize. Do not include real names or private details. / 请先匿名化，不要写真实姓名或隐私细节。
+      placeholder: "Gender / 性别, approximate birth date/time / 大致出生日期时间, approximate location or longitude / 大致地点或经度, target year/month if used / 如有指定流年流月也请写明。"
     validations:
       required: false
 
   - type: textarea
     id: accurate_parts
     attributes:
-      label: What felt accurate or useful?
-      placeholder: "Which sections or sentences matched the real situation?"
+      label: What felt accurate or useful? / 哪些地方感觉准确或有用？
+      placeholder: "Which sections or sentences matched the real situation? / 哪些段落或句子比较符合现实？"
     validations:
       required: false
 
   - type: textarea
     id: inaccurate_parts
     attributes:
-      label: What felt inaccurate, vague, or unhelpful?
-      placeholder: "Please paste the relevant paragraph if possible, after removing private data."
+      label: What felt inaccurate, vague, or unhelpful? / 哪些地方不准、太模糊或没帮助？
+      placeholder: "Please paste the relevant paragraph if possible, after removing private data. / 可以粘贴相关段落，但请先去掉隐私。"
     validations:
       required: false
 
   - type: textarea
     id: luck_cycle_feedback
     attributes:
-      label: Luck-cycle / year / month feedback
-      description: Feedback about big luck cycles, annual luck, monthly windows, and advice.
-      placeholder: "Were the years/months useful? Were good and caution points balanced enough?"
+      label: Luck-cycle / year / month feedback / 大运、流年、流月反馈
+      description: Feedback about big luck cycles, annual luck, monthly windows, and advice. / 关于大运、流年、流月窗口和建议的反馈。
+      placeholder: "Were the years/months useful? Were good and caution points balanced enough? / 年份月份提示是否有用？好的机会和需要注意的地方是否平衡？"
     validations:
       required: false
 
   - type: dropdown
     id: readability
     attributes:
-      label: Readability
+      label: Readability / 可读性
       options:
-        - Easy to understand
-        - Mostly understandable
-        - Too vague
-        - Too technical
-        - Too long
-        - Too short
+        - Easy to understand / 容易理解
+        - Mostly understandable / 基本能看懂
+        - Too vague / 太模糊
+        - Too technical / 太专业
+        - Too long / 太长
+        - Too short / 太短
     validations:
       required: false
 
   - type: textarea
     id: error_details
     attributes:
-      label: Error or startup problem
-      description: If something failed, paste the error text or attach a screenshot with private data removed.
-      placeholder: "What did you click/run, and what happened?"
+      label: Error or startup problem / 报错或启动问题
+      description: If something failed, paste the error text or attach a screenshot with private data removed. / 如果运行失败，请粘贴报错或上传截图，注意先去掉隐私。
+      placeholder: "What did you click/run, and what happened? / 你点了什么、运行了什么、发生了什么？"
     validations:
       required: false
 
   - type: checkboxes
     id: safety_check
     attributes:
-      label: Safety check
+      label: Safety check / 隐私确认
       options:
-        - label: I removed private information before posting.
+        - label: I removed private information before posting. / 我已经去掉隐私信息。
           required: true
-        - label: I am not posting another person's private birth data without permission.
+        - label: I am not posting another person's private birth data without permission. / 我没有未经允许发布他人的出生隐私。
           required: true
