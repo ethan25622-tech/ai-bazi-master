@@ -1,5 +1,27 @@
 # AI Bazi Master Command Center / AI 八字解读项目
 
+## Simple Instructions / 简单操作说明
+
+For testers, use it like this:
+
+1. Download the ZIP.
+2. Right-click the ZIP and choose **Extract All**.
+3. Open the extracted folder.
+4. Double-click `双击启动.bat`.
+5. Follow the prompts and enter birth information.
+
+测试者按这个步骤使用：
+
+1. 下载 ZIP 压缩包。
+2. 右键 ZIP，选择 **全部解压**。
+3. 打开解压后的文件夹。
+4. 双击 `双击启动.bat`。
+5. 按提示输入出生信息即可。
+
+If it does not start, install Python 3.11 or newer and check **Add python.exe to PATH** during installation.
+
+如果打不开，请安装 Python 3.11 或更新版本，安装时勾选 **Add python.exe to PATH**。
+
 This workspace is now the command center for the AI Bazi master project.  It
 bundles the legacy calculation scripts in `bazi_legacy/`, and adds a stable
 orchestration layer in `bazi_master`.
