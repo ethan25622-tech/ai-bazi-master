@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-call "%~dp0启动.cmd"
+call "%~dp0START_HERE.bat"

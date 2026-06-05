@@ -1,12 +1,12 @@
-@echo off
+﻿@echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-echo AI 八字解盘
+echo AI Bazi Master / AI 八字解盘
 echo.
-echo 1. 输入生日，生成本地报告，然后可继续提问
-echo 2. 输入生日，一键复制 GPT/Claude 解盘提示词
+echo 1. Local readable report and follow-up questions / 本地报告并继续提问
+echo 2. Copy GPT/Claude prompt / 复制 GPT/Claude 提示词
 echo.
-set /p CHOICE=请输入 1 或 2：
+set /p CHOICE=Please enter 1 or 2 / 请输入 1 或 2: 
 if "%CHOICE%"=="1" (
   call "%~dp01.cmd"
   echo.
@@ -19,5 +19,5 @@ if "%CHOICE%"=="2" (
   pause
   exit /b %errorlevel%
 )
-echo 输入无效，请重新运行。
+echo Invalid input / 输入无效，请重新运行。
 pause

@@ -49,6 +49,34 @@ For details, see `FEEDBACK.md`.
 
 ## Stable Master Interface / 稳定使用入口
 
+## Quick Start for Testers / 测试者快速开始
+
+1. Download the ZIP from GitHub.
+2. Right-click the ZIP file and choose **Extract All**.
+3. Open the extracted folder.
+4. Double-click `START_HERE.bat`.
+
+1. 从 GitHub 下载 ZIP。
+2. 右键 ZIP 文件，选择 **全部解压**。
+3. 打开解压后的文件夹。
+4. 双击 `START_HERE.bat`。
+
+If the window says Python is missing, install Python 3.11 or newer from:
+
+https://www.python.org/downloads/windows/
+
+During installation, check **Add python.exe to PATH**.
+
+如果窗口提示没有 Python，请安装 Python 3.11 或更新版本。安装时一定勾选
+**Add python.exe to PATH**。
+
+Do not run the program directly inside the ZIP preview window. Windows may only
+extract the batch file and not the rest of the project, which makes the program
+look like it cannot start.
+
+不要在 ZIP 压缩包预览窗口里直接双击运行。Windows 可能只临时解压启动文件，
+没有把整个项目一起解压出来，这会导致程序看起来“没反应”。
+
 Run the simple interactive version:
 运行最简单的交互版：
 

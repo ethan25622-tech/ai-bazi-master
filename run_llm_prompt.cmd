@@ -1,9 +1,4 @@
-@echo off
+﻿@echo off
 setlocal
-set PYTHONIOENCODING=utf-8
-set "PYTHON=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
-if not exist "%PYTHON%" (
-  echo Bundled Python not found: %PYTHON% 1>&2
-  exit /b 1
-)
-"%PYTHON%" -m bazi_master.cli --llm-prompt %*
+call "%~dp0_run_python.cmd" -m bazi_master.cli --llm-prompt %*
+exit /b %errorlevel%
