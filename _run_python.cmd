@@ -55,7 +55,7 @@ echo 1. Close this window.
 echo 2. Right-click the ZIP file.
 echo 3. Choose Extract All.
 echo 4. Open the extracted folder.
-echo 5. Run START_HERE.bat again.
+echo 5. Run the launcher .bat file again.
 echo.
 pause
 exit /b %ERR%

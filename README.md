@@ -54,12 +54,12 @@ For details, see `FEEDBACK.md`.
 1. Download the ZIP from GitHub.
 2. Right-click the ZIP file and choose **Extract All**.
 3. Open the extracted folder.
-4. Double-click `START_HERE.bat`.
+4. Double-click `双击启动.bat`.
 
 1. 从 GitHub 下载 ZIP。
 2. 右键 ZIP 文件，选择 **全部解压**。
 3. 打开解压后的文件夹。
-4. 双击 `START_HERE.bat`。
+4. 双击 `双击启动.bat`。
 
 If the window says Python is missing, install Python 3.11 or newer from:
 

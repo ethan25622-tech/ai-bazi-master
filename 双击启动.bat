@@ -1,4 +1,14 @@
-﻿@echo off
-chcp 65001 >nul
+@echo off
 cd /d "%~dp0"
-call "%~dp0START_HERE.bat"
+echo AI Bazi Master
+echo.
+echo IMPORTANT:
+echo If this is inside a ZIP preview window, close it first.
+echo Right-click the ZIP file, choose Extract All, then run this file again.
+echo.
+echo If Python is missing, install Python 3.11 or newer and check:
+echo Add python.exe to PATH
+echo.
+call "%~dp0ask_bazi.cmd"
+echo.
+pause
