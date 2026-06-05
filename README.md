@@ -18,9 +18,10 @@ For testers, use it like this:
 4. 双击 `双击启动.bat`。
 5. 按提示输入出生信息即可。
 
-If it does not start, install Python 3.11 or newer and check **Add python.exe to PATH** during installation.
+The public ZIP includes a portable Python runtime, so testers normally do not
+need to install Python separately.
 
-如果打不开，请安装 Python 3.11 或更新版本，安装时勾选 **Add python.exe to PATH**。
+公开 ZIP 已经包含便携 Python 运行环境，测试者通常不需要另外安装 Python。
 
 This workspace is now the command center for the AI Bazi master project.  It
 bundles the legacy calculation scripts in `bazi_legacy/`, and adds a stable
@@ -83,14 +84,11 @@ For details, see `FEEDBACK.md`.
 3. 打开解压后的文件夹。
 4. 双击 `双击启动.bat`。
 
-If the window says Python is missing, install Python 3.11 or newer from:
+If the window says the Python runtime is missing, download the ZIP again,
+extract the whole folder, and run `双击启动.bat` from the extracted folder.
 
-https://www.python.org/downloads/windows/
-
-During installation, check **Add python.exe to PATH**.
-
-如果窗口提示没有 Python，请安装 Python 3.11 或更新版本。安装时一定勾选
-**Add python.exe to PATH**。
+如果窗口提示缺少 Python runtime，请重新下载 ZIP，完整解压整个文件夹，
+然后从解压后的文件夹里运行 `双击启动.bat`。
 
 Do not run the program directly inside the ZIP preview window. Windows may only
 extract the batch file and not the rest of the project, which makes the program
